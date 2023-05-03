@@ -36,7 +36,7 @@ for (let i = 0; i < images.length; i++) {
     slide.innerHTML = `<img src="./${element.image}">`;
     slide.innerHTML += `<h3>${element.title}</h3>`;
     slide.innerHTML += `<p>${element.text}</p>`;
-    if (currentSlide === 1) {
+    if (i !== 0) {
         slide.classList.add("hidden")
     }
     carousel.appendChild(slide)
