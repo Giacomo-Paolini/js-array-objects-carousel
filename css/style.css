@@ -6,7 +6,8 @@
 }
 
 button {
-    text-align: center;
+    width: 100px;
+    margin-right: 100px;
 }
 
 .hidden {

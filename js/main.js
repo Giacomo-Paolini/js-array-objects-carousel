@@ -25,6 +25,10 @@ const images = [
 let carousel = document.getElementById("container-carousel");
 let currentSlide = 0;
 
+const buttonBack = document.createElement("button");
+buttonBack.innerText = "Back";
+carousel.appendChild(buttonBack);
+
 const buttonTop = document.createElement("button");
 buttonTop.innerText = "Next";
 carousel.appendChild(buttonTop);
@@ -42,10 +46,6 @@ for (let i = 0; i < images.length; i++) {
     }
     carousel.appendChild(slide)
 }
-
-const buttonBack = document.createElement("button");
-buttonBack.innerText = "Back";
-carousel.appendChild(buttonBack);
 
 buttonTop.addEventListener("click", function() {
     let slides = document.getElementsByClassName("slide");
