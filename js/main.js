@@ -33,6 +33,7 @@ for (let i = 0; i < images.length; i++) {
     const element = images[i];
 
     let slide = document.createElement("div");
+    slide.classList.add("slide");
     slide.innerHTML = `<img src="./${element.image}">`;
     slide.innerHTML += `<h3>${element.title}</h3>`;
     slide.innerHTML += `<p>${element.text}</p>`;
@@ -46,8 +47,16 @@ const buttonBack = document.createElement("button");
 buttonBack.innerText = "Back";
 carousel.appendChild(buttonBack);
 
-// buttonTop.addEventListener("click", function() {
-//     if (currentSlide === 0) {
-        
-//     }
-// })
+buttonTop.addEventListener("click", function() {
+    let slides = document.getElementsByClassName("slide");
+    slides[currentSlide].classList.add("hidden");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.remove("hidden");
+});
+
+buttonBack.addEventListener("click", function() {
+    let slides = document.getElementsByClassName("slide");
+    slides[currentSlide].classList.add("hidden");
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].classList.remove("hidden");
+});
